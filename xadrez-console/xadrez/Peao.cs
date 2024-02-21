@@ -2,6 +2,7 @@
 
 namespace xadrez
 {
+
     class Peao : Peca
     {
 
@@ -17,7 +18,7 @@ namespace xadrez
         private bool existeInimigo(Posicao pos)
         {
             Peca p = tabuleiro.peca(pos);
-            return p != null || p.cor != cor;
+            return p != null && p.cor != cor;
         }
 
         private bool livre(Posicao pos)
@@ -31,49 +32,48 @@ namespace xadrez
 
             Posicao pos = new Posicao(0, 0);
 
-            if(cor == Cor.Branca)
+            if (cor == Cor.Branca)
             {
                 pos.definirValores(posicao.linha - 1, posicao.coluna);
-                if(tabuleiro.posicaoValida(pos) && livre(pos)) {
+                if (tabuleiro.posicaoValida(pos) && livre(pos))
+                {
                     mat[pos.linha, pos.coluna] = true;
                 }
-
                 pos.definirValores(posicao.linha - 2, posicao.coluna);
-                if (tabuleiro.posicaoValida(pos) && livre(pos) && qtdeMovimentos == 0) {
+                Posicao p2 = new Posicao(posicao.linha - 1, posicao.coluna);
+                if (tabuleiro.posicaoValida(p2) && livre(p2) && tabuleiro.posicaoValida(pos) && livre(pos) && qtdeMovimentos == 0)
+                {
                     mat[pos.linha, pos.coluna] = true;
                 }
-
                 pos.definirValores(posicao.linha - 1, posicao.coluna - 1);
                 if (tabuleiro.posicaoValida(pos) && existeInimigo(pos))
                 {
                     mat[pos.linha, pos.coluna] = true;
                 }
-
                 pos.definirValores(posicao.linha - 1, posicao.coluna + 1);
                 if (tabuleiro.posicaoValida(pos) && existeInimigo(pos))
                 {
                     mat[pos.linha, pos.coluna] = true;
                 }
-            } else
+            }
+            else
             {
                 pos.definirValores(posicao.linha + 1, posicao.coluna);
                 if (tabuleiro.posicaoValida(pos) && livre(pos))
                 {
                     mat[pos.linha, pos.coluna] = true;
                 }
-
                 pos.definirValores(posicao.linha + 2, posicao.coluna);
-                if (tabuleiro.posicaoValida(pos) && livre(pos) && qtdeMovimentos == 0)
+                Posicao p2 = new Posicao(posicao.linha + 1, posicao.coluna);
+                if (tabuleiro.posicaoValida(p2) && livre(p2) && tabuleiro.posicaoValida(pos) && livre(pos) && qtdeMovimentos == 0)
                 {
                     mat[pos.linha, pos.coluna] = true;
                 }
-
                 pos.definirValores(posicao.linha + 1, posicao.coluna - 1);
                 if (tabuleiro.posicaoValida(pos) && existeInimigo(pos))
                 {
                     mat[pos.linha, pos.coluna] = true;
                 }
-
                 pos.definirValores(posicao.linha + 1, posicao.coluna + 1);
                 if (tabuleiro.posicaoValida(pos) && existeInimigo(pos))
                 {

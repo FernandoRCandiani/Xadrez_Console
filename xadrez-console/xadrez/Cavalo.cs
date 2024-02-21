@@ -27,49 +27,49 @@ namespace xadrez
 
 
             pos.definirValores(posicao.linha - 1, posicao.coluna - 2);
-            while (tabuleiro.posicaoValida(pos) && podeMover(pos))
+            if (tabuleiro.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
 
             pos.definirValores(posicao.linha - 2, posicao.coluna - 1);
-            while (tabuleiro.posicaoValida(pos) && podeMover(pos))
+            if (tabuleiro.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
 
             pos.definirValores(posicao.linha - 2, posicao.coluna + 1);
-            while (tabuleiro.posicaoValida(pos) && podeMover(pos))
+            if (tabuleiro.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
 
             pos.definirValores(posicao.linha - 1, posicao.coluna + 2);
-            while (tabuleiro.posicaoValida(pos) && podeMover(pos))
+            if (tabuleiro.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
 
             pos.definirValores(posicao.linha + 1, posicao.coluna + 2);
-            while (tabuleiro.posicaoValida(pos) && podeMover(pos))
+            if (tabuleiro.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
 
             pos.definirValores(posicao.linha + 2, posicao.coluna + 1);
-            while (tabuleiro.posicaoValida(pos) && podeMover(pos))
+            if (tabuleiro.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
 
             pos.definirValores(posicao.linha + 2, posicao.coluna - 1);
-            while (tabuleiro.posicaoValida(pos) && podeMover(pos))
+            if (tabuleiro.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
 
             pos.definirValores(posicao.linha + 1, posicao.coluna - 2);
-            while (tabuleiro.posicaoValida(pos) && podeMover(pos))
+            if (tabuleiro.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
